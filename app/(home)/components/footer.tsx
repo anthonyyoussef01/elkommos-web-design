@@ -12,7 +12,7 @@ export default function Footer() {
     return (
         <section className="w-full py-12 md:py-24 lg:py-32 bg-zinc-900 dark:bg-zinc-100">
             <div className="container px-4 md:px-6 flex flex-col items-center text-center">
-                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-white">
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-white dark:text-zinc-800">
                     Stay Connected
                 </h2>
                 <p className="mx-auto max-w-[700px] text-zinc-100 md:text-lg dark:text-zinc-800">
@@ -27,16 +27,16 @@ export default function Footer() {
                     </form>
                 </div>
                 <div className="flex justify-center space-x-4">
-                    <Link href="#" aria-label="Facebook page" className="text-white" prefetch={false}>
+                    <Link href="#" aria-label="Facebook page" className="text-white dark:text-zinc-800" prefetch={false}>
                         <FacebookIcon className="h-6 w-6" />
                     </Link>
-                    <Link href="#" aria-label="Twitter profile" className="text-white" prefetch={false}>
+                    <Link href="#" aria-label="Twitter profile" className="text-white dark:text-zinc-800" prefetch={false}>
                         <TwitterIcon className="h-6 w-6" />
                     </Link>
-                    <Link href="#" aria-label="Instagram profile" className="text-white" prefetch={false}>
+                    <Link href="#" aria-label="Instagram profile" className="text-white dark:text-zinc-800" prefetch={false}>
                         <InstagramIcon className="h-6 w-6" />
                     </Link>
-                    <Link href="#" aria-label="LinkedIn profile" className="text-white" prefetch={false}>
+                    <Link href="#" aria-label="LinkedIn profile" className="text-white dark:text-zinc-800" prefetch={false}>
                         <LinkedinIcon className="h-6 w-6" />
                     </Link>
                 </div>

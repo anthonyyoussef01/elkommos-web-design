@@ -5,7 +5,7 @@ import {HeroParallax} from "@/components/ui/hero-parallax";
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-menu";
 import {OurServices} from "@/app/(home)/components/our-services";
 import {Components} from "@/app/(home)/components/components";
-import {Blog} from "@/app/(home)/components/blog";
+import {Services} from "@/app/(home)/components/services";
 import Footer from "@/app/(home)/components/footer";
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
         <TriggerWrapper>
           <Trigger>Our Services</Trigger>
           <Trigger>Components</Trigger>
-          <Trigger>Blog</Trigger>
+          <Trigger>Services & Information</Trigger>
         </TriggerWrapper>
         <Tabs>
           <Tab>
@@ -25,7 +25,7 @@ export default function Home() {
             <Components />
           </Tab>
           <Tab>
-            <Blog />
+            <Services />
           </Tab>
         </Tabs>
       </Dropdown>

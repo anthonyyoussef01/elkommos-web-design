@@ -1,14 +1,15 @@
-export const Blog = () => (
+export const Services = () => (
     <>
         <div className={'p-4 border-b dark:border-neutral-800'}>
-            <div className={'text-sm dark:text-neutral-500 text-neutral-400 px-3'}>info</div>
-            <span
+            <div className={'text-sm dark:text-neutral-500 text-neutral-400 px-3'}>services</div>
+            <a
+                href={'/pricing'}
                 className={
                     'block hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors w-fit'
                 }
             >
         <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
-          Workflow{' '}
+          Pricing{' '}
             <svg
                 viewBox="0 0 12 12"
                 width="10px"
@@ -18,11 +19,11 @@ export const Blog = () => (
             <path d="M11 9.283V1H2.727v1.44h5.83L1 9.99 2.01 11l7.556-7.55v5.833H11Z" />
           </svg>
         </h3>
-        <p className={'text-neutral-500 text-sm'}>Check out how we deliver our products</p>
-      </span>
+        <p className={'text-neutral-500 text-sm'}>Explore our competitive pricing plans</p>
+      </a>
         </div>
         <div className={'p-4'}>
-            <div className={'text-sm dark:text-neutral-500 text-neutral-400 px-3 pt-0'}>tutorials</div>
+            <div className={'text-sm dark:text-neutral-500 text-neutral-400 px-3 pt-0'}>info</div>
             <div className={'flex'}>
         <span
             className={
@@ -30,7 +31,7 @@ export const Blog = () => (
             }
         >
           <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
-            Animations{' '}
+            Workflow{' '}
               <svg
                   viewBox="0 0 12 12"
                   width="10px"
@@ -41,7 +42,7 @@ export const Blog = () => (
             </svg>
           </h3>
           <p className={'text-neutral-500 text-sm'}>
-            You will learn how to make fascinating animations
+            Check out how we deliver our products
           </p>
         </span>
                 <span
@@ -50,7 +51,7 @@ export const Blog = () => (
                     }
                 >
           <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
-            API{' '}
+            Customer Success Stories{' '}
               <svg
                   viewBox="0 0 12 12"
                   width="10px"
@@ -61,7 +62,7 @@ export const Blog = () => (
             </svg>
           </h3>
           <p className={'text-neutral-500 text-sm'}>
-            Learn how to build fast and reliable APIs to deliver data
+            Discover how we've helped businesses like yours achieve their goals
           </p>
         </span>
             </div>
