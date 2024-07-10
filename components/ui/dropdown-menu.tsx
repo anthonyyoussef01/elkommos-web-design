@@ -30,11 +30,11 @@ export const Dropdown: React.FC<{ children: React.ReactNode }> = ({ children }) 
     return (
         <DirectionContext.Provider value={{ direction, setAnimationDirection }}>
             <CurrentTabContext.Provider value={{ currentTab }}>
-        <span
-            onMouseLeave={() => setAnimationDirection(null)}
-            className={'relative flex h-fit gap-2'}>
-          {children}
-        </span>
+                <span
+                    onMouseLeave={() => setAnimationDirection(null)}
+                    className={'relative flex h-fit gap-2 z-50'}>
+                  {children}
+                </span>
             </CurrentTabContext.Provider>
         </DirectionContext.Provider>
     )
