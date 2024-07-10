@@ -45,13 +45,14 @@ export const Services = () => (
             Check out how we deliver our products
           </p>
         </span>
-                <span
-                    className={
-                        'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'
-                    }
-                >
+        <a
+            href={'/testimonials'}
+            className={
+                'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'
+            }
+        >
           <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
-            Customer Success Stories{' '}
+            Customer Testimonials{' '}
               <svg
                   viewBox="0 0 12 12"
                   width="10px"
@@ -64,7 +65,7 @@ export const Services = () => (
           <p className={'text-neutral-500 text-sm'}>
             Discover how we've helped businesses like yours achieve their goals
           </p>
-        </span>
+        </a>
             </div>
         </div>
     </>

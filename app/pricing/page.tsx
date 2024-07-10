@@ -26,6 +26,7 @@ export interface PricingTier {
     price: string | Record<string, string>;
     description: string | ReactNode;
     features: string[];
+    renderFeatures?: string[];
     featured?: boolean;
     highlighted?: boolean;
     cta: string;
@@ -43,7 +44,7 @@ const tiers: PricingTier[] = [
         name: 'Starter Package',
         id: '0',
         href: '/subscribe',
-        price: { '1': '$999 - 4,999', '2': '', '3': '' },
+        price: { '1': '$999 - 4,999', '2': '$35 - 69', '3': '$359 - 699' },
         discountPrice: { '1': '', '2': '', '3': '' },
         description: `Perfect for small websites (up to 5 pages`,
         features: [
@@ -63,7 +64,7 @@ const tiers: PricingTier[] = [
         name: 'Business Package',
         id: '1',
         href: '/subscribe',
-        price: { '1': '$4,999 and up', '2': '', '3': '' },
+        price: { '1': '$4,999+', '2': '$69 - 119', '3': '$699 - 1,199' },
         discountPrice: { '1': '', '2': '', '3': '' },
         description: `Ideal for bigger websites and e-commerce.`,
         features: [
@@ -85,7 +86,7 @@ const tiers: PricingTier[] = [
         name: 'Custom Package',
         id: '2',
         href: '/contact-us',
-        price: { '1': '$39k and up', '2': '$179.88', '3': '' },
+        price: { '1': '$39k+', '2': '$499+', '3': '4999+' },
         discountPrice: { '1': '', '2': '', '3': '' },
         description: `For fully custom websites coded from scratch using your preferred stack.`,
         features: [
@@ -123,8 +124,23 @@ const CheckIcon = ({ className }: { className?: string }) => {
 
 export default function PricingPage() {
     const [frequency, setFrequency] = useState(frequencies[0]);
-
     const bannerText = 'Save 10% off all plans for a limited time';
+
+    tiers.forEach(tier => {
+        // Clone the original features list to avoid mutating the original array
+        const updatedFeatures = [...tier.features];
+
+        // Determine the index of the feature to replace
+        const featureIndex = updatedFeatures.findIndex(feature => feature.includes("1 year of hosting, bug fixing, and maintenance"));
+
+        // If the feature exists and the frequency is either monthly or annually, replace it
+        if (featureIndex !== -1 && (frequency.value === '2' || frequency.value === '3')) {
+            updatedFeatures[featureIndex] = "Forever* hosting, bug fixing, and maintenance";
+        }
+
+        // Update the tier's features list for rendering
+        tier.renderFeatures = updatedFeatures;
+    });
 
     return (
         <div
@@ -138,28 +154,28 @@ export default function PricingPage() {
                 </TriggerWrapper>
                 <Tabs>
                     <Tab>
-                        <OurServices />
+                        <OurServices/>
                     </Tab>
                     <Tab>
-                        <Components />
+                        <Components/>
                     </Tab>
                     <Tab>
-                        <Services />
+                        <Services/>
                     </Tab>
                 </Tabs>
             </Dropdown>
 
             <div className="w-full flex flex-col items-center mt-6">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
-                    <div className="w-full lg:w-auto mx-auto max-w-4xl lg:flex lg:flex-col lg:content-center text-center">
+                    <div
+                        className="w-full lg:w-auto mx-auto max-w-4xl lg:flex lg:flex-col lg:content-center text-center">
                         <h1 className="text-black dark:text-white text-4xl font-semibold sm:max-w-none md:text-6xl !leading-tight">
                             Pricing
                         </h1>
                         <p className="text-black dark:text-white mt-6 md:text-xl lg:text-center">
-                            We strive to provide the best service possible. That is why we provide unlimited revisions before publishing any product and 1-year maintenance with any one-time purchase or forever* maintenance with monthly and annual purchases.
-                        </p>
-                        <p className="text-gray-500 dark:text-gray-400 mt-1 md:text-sm text-left">
-                            Forever maintenance is defined as long as the product is hosted with us. Moving to another hosting provider will forfeit our maintenance services.
+                            We strive to provide the best service possible. That is why we provide unlimited revisions
+                            before publishing any product and 1-year maintenance with any one-time purchase or forever*
+                            maintenance with monthly and annual purchases.
                         </p>
                     </div>
 
@@ -212,7 +228,7 @@ export default function PricingPage() {
 
                     <div
                         className={cn(
-                            'isolate mx-auto mt-4 mb-28 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none',
+                            'isolate mx-auto mt-4 mb-8 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none',
                             tiers.length === 2 ? 'lg:grid-cols-2' : '',
                             tiers.length === 3 ? 'lg:grid-cols-3' : '',
                         )}
@@ -317,7 +333,7 @@ export default function PricingPage() {
                                         'mt-8 space-y-3 text-sm leading-6 xl:mt-10',
                                     )}
                                 >
-                                    {tier.features.map((feature) => (
+                                    {tier.renderFeatures?.map((feature) => (
                                         <li key={feature} className="flex gap-x-3">
                                             <CheckIcon
                                                 className={cn(
@@ -337,6 +353,10 @@ export default function PricingPage() {
                             </div>
                         ))}
                     </div>
+                    <p className="text-gray-500 dark:text-gray-400 mb-4 md:text-sm text-left">
+                        * Forever maintenance is defined as long as the product is hosted with us. Moving to another
+                        hosting provider will forfeit our maintenance services.
+                    </p>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@ const nextConfig = {
     images: {
         remotePatterns: [
             { hostname: 'aceternity.com' },
+            { hostname: 'images.unsplash.com' },
         ],
     },
 };
