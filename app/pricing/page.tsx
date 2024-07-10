@@ -148,14 +148,18 @@ export default function PricingPage() {
                     </Tab>
                 </Tabs>
             </Dropdown>
-            <div className="w-full flex flex-col items-center">
+
+            <div className="w-full flex flex-col items-center mt-6">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
-                    <div className="w-full lg:w-auto mx-auto max-w-4xl lg:text-center">
-                        <h1 className="text-black dark:text-white text-4xl font-semibold max-w-xs sm:max-w-none md:text-6xl !leading-tight">
+                    <div className="w-full lg:w-auto mx-auto max-w-4xl lg:flex lg:flex-col lg:content-center text-center">
+                        <h1 className="text-black dark:text-white text-4xl font-semibold sm:max-w-none md:text-6xl !leading-tight">
                             Pricing
                         </h1>
-                        <p className="text-black dark:text-white mt-6 md:text-xl lg:text-center max-w-prose">
-                            We strive to provide the best service possible. That is why we provide unlimited revisions before publishing any product and 1-year maintenance with any one-time purchase or forever maintenance with monthly and annual purchases.
+                        <p className="text-black dark:text-white mt-6 md:text-xl lg:text-center">
+                            We strive to provide the best service possible. That is why we provide unlimited revisions before publishing any product and 1-year maintenance with any one-time purchase or forever* maintenance with monthly and annual purchases.
+                        </p>
+                        <p className="text-gray-500 dark:text-gray-400 mt-1 md:text-sm text-left">
+                            Forever maintenance is defined as long as the product is hosted with us. Moving to another hosting provider will forfeit our maintenance services.
                         </p>
                     </div>
 
