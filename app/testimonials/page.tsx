@@ -10,64 +10,73 @@ import {Components} from "@/app/(home)/components/components";
 import {Services} from "@/app/(home)/components/services";
 
 
-const testimonials = [
+interface Testimonial {
+    content: string
+    author: {
+        name: string
+        role: string
+        image: string
+    }
+}
+
+const testimonials: Testimonial[][] = [
     [
         {
             content:
-                'TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.',
+                'The website Anthony created for our bakery has transformed our business. We saw a 50% increase in online orders within three months!',
             author: {
-                name: 'Sheryl Berge',
-                role: 'CEO at Lynch LLC',
+                name: 'Emily Johnson',
+                role: 'Owner, Sweet Treats Bakery',
                 image: "https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=685&q=80",
             },
         },
         {
             content:
-                'I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.',
+                'Anthony\'s expertise in e-commerce setup helped us double our sales. The advanced SEO and marketing strategies were game-changers.',
             author: {
                 name: 'Amy Hahn',
-                role: 'Director at Velocity Industries',
-                image: "https://images.unsplash.com/photo-1623605931891-d5b95ee98459?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=640&q=80",
+                role: 'CEO, Two Threads Boutique.',
+                image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             },
         },
     ],
     [
         {
             content:
-                'The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.',
+                'Anthony\'s attention to detail and dedication made our website launch smooth and successful. Highly recommend his services!',
             author: {
-                name: 'Leland Kiehn',
-                role: 'Founder of Kiehn and Sons',
+                name: 'Michael Harris',
+                role: 'Founder, GreenLeaf Marketing',
                 image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
             },
         },
         {
             content:
-                'There are so many things I had to do with my old software that I just don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.',
+                'Anthony\'s expertise in web development and SEO has been instrumental in driving traffic and sales to our online store. Highly recommend!',
             author: {
                 name: 'Erin Powlowski',
-                role: 'COO at Armstrong Inc',
-                image: 'https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                role: 'COO at TechSparks Co.',
+                image: 'https://images.unsplash.com/photo-1719581863356-f5f455386066?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             },
         },
     ],
     [
         {
             content:
-                'I used to have to remit tax to the EU and with TaxPal I somehow don’t have to do that anymore. Nervous to travel there now though.',
+                "Our new website is fantastic! Anthony took the time to understand our needs and delivered a product that truly represents our brand.",
             author: {
-                name: 'Peter Renolds',
+                name: 'Sarah Youssef',
                 role: 'Founder of West Inc',
-                image: 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+                image: 'https://images.unsplash.com/photo-1654404886281-3853c55e028d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
             },
         },
         {
             content:
-                'This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.',
+                'Our website\'s new design has received rave reviews from customers. Anthony\'s work exceeded our expectations in every way.',
             author: {
-                name: 'Amy Hahn',
-                role: 'Director at Velocity Industries',
-                image: 'https://images.unsplash.com/photo-1540569014015-19a7be504e3a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+                name: 'Emily Wright',
+                role: 'Project Manager, UrbanTech',
+                image: 'https://images.unsplash.com/photo-1597182471331-544f2888fdd5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHx8',
             },
         },
     ],
