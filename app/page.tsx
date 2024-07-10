@@ -6,6 +6,7 @@ import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/drop
 import {OurServices} from "@/app/(home)/components/our-services";
 import {Components} from "@/app/(home)/components/components";
 import {Blog} from "@/app/(home)/components/blog";
+import Footer from "@/app/(home)/components/footer";
 
 export default function Home() {
   return (
@@ -30,6 +31,8 @@ export default function Home() {
       </Dropdown>
 
       <HeroParallax products={products} />
+
+      <Footer />
     </main>
   );
 }
@@ -66,6 +69,12 @@ const products = [
         "/mahzuzah.png",
   },
   {
+    title: "Stony Point Pancake Factory",
+    link: "https://stonypointpancakefactory.com",
+    thumbnail:
+        "/pancake_factory.png",
+  },
+  {
     title: "KingFut",
     link: "https://kingfut.com/author/anthonyyoussef01",
     thumbnail:
@@ -80,8 +89,14 @@ const products = [
   },
   {
     title: "VMSP Church",
-    link: "https://www.vmspchurch.org",
+    link: "https://vmspchurch.org",
     thumbnail:
         "/vmsp.png",
+  },
+  {
+    title: "Anthony Portfolio",
+    link: "https://elkommos.me",
+    thumbnail:
+        "/anthony_light_portfolio.png",
   },
 ];
