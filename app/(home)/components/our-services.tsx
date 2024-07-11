@@ -1,5 +1,5 @@
 export const OurServices = () => (
-    <div className="flex gap-4 p-4 w-full h-full">
+    <div className="flex gap-4 p-4 w-full h-full drop-shadow-[0_3px_3px_rgba(240,240,240,0.9)] dark:drop-shadow-[0_2.2px_2.2px_rgba(0,0,0,0.8)]">
         <a
             href="/"
             className={
@@ -8,20 +8,20 @@ export const OurServices = () => (
         >
             We <br /> Create
         </a>
-        <div className={'flex flex-col gap-3'}>
+        <div className={'flex flex-col gap-3 '}>
             <div>
                 <h3 className={'dark:text-white text-neutral-950'}>Websites</h3>
-                <p className={'text-neutral-500 text-sm'}>
+                <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
                     Interactive, beautiful and user friendly websites
                 </p>
             </div>
             <div>
                 <h3 className={'dark:text-white text-neutral-950'}>Components</h3>
-                <p className={'text-neutral-500 text-sm'}>Animated and colorful components</p>
+                <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>Animated and colorful components</p>
             </div>
             <div>
                 <h3 className={'dark:text-white text-neutral-950'}>SaaS</h3>
-                <p className={'text-neutral-500 text-sm'}>
+                <p className={'text-neutral-500 dark:text-neutral-400 text-sm-sm'}>
                     Useful Software as a Service products which people love
                 </p>
             </div>

@@ -7,11 +7,19 @@ import {OurServices} from "@/app/(home)/components/our-services";
 import {Components} from "@/app/(home)/components/components";
 import {Services} from "@/app/(home)/components/services";
 import Footer from "@/app/(home)/components/footer";
+import {Icon} from "lucide-react";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-1 overflow-x-hidden">
       <Dropdown>
+        <Image
+            className="h-10 w-10 object-cover"
+            src={'https://images.unsplash.com/photo-1620288627223-53302f4e8c74?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
+            alt=""
+            width={100}
+            height={100}
+        />
         <TriggerWrapper>
           <Trigger>Our Services</Trigger>
           <Trigger>Components</Trigger>

@@ -98,16 +98,23 @@ export const Tabs: React.FC<{ children: React.ReactNode; className?: string }> =
                 initial={{
                     opacity: 0,
                     scale: 0.98,
-                    backdropFilter: 'blur(0px)'
+                    backdropFilter: 'blur(0px)',
+                    backgroundColor: 'rgba(0, 0, 0, 0)'
                 }}
                 animate={
                     currentTab
                         ? {
                             opacity: 1,
                             scale: 1,
-                            backdropFilter: 'blur(10px)'
-                        }
-                        : { opacity: 0, scale: 0.98, backdropFilter: 'blur(0px)' }
+                            backdropFilter: 'blur(10px)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.01)'
+                    }
+                    : {
+                        opacity: 0,
+                        scale: 0.98,
+                        backdropFilter: 'blur(0px)',
+                        backgroundColor: 'rgba(0, 0, 0, 0)'
+                    }
                 }
                 className="absolute left-0 top-[calc(100%_+_6px)] w-auto">
                 <div className="absolute -top-[6px] left-0 right-0 h-[6px]" />

@@ -114,7 +114,7 @@ export default function FUITestimonialWithGrid() {
                 <Container>
                     <div className="mx-auto max-w-2xl md:text-center">
                         <h2 className="font-geist text-3xl tracking-tighter text-black dark:text-gray-100 sm:text-6xl">
-                            <span className='bg-gradient-to-br from-indigo-400 via-indigo-300 to-indigo-700 bg-clip-text text-transparent'>
+                            <span className='bg-gradient-to-br from-red-400 via-red-300 to-red-700 bg-clip-text text-transparent'>
                                 Loved
                             </span> by businesses worldwide.
                         </h2>
@@ -153,8 +153,8 @@ export default function FUITestimonialWithGrid() {
                                                             className="h-14 w-14 object-cover"
                                                             src={testimonial.author.image}
                                                             alt=""
-                                                            width={56}
-                                                            height={56}
+                                                            width={150}
+                                                            height={150}
                                                         />
                                                     </div>
                                                 </figcaption>

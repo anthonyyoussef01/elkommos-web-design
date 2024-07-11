@@ -44,7 +44,7 @@ const tiers: PricingTier[] = [
         name: 'Starter Package',
         id: '0',
         href: '/subscribe',
-        price: { '1': '$999 - 4,999', '2': '$35 - 69', '3': '$359 - 699' },
+        price: { '1': '$999 - 4,999', '2': '$45 - 89', '3': '$459 - 899' },
         discountPrice: { '1': '', '2': '', '3': '' },
         description: `Perfect for small websites (up to 5 pages`,
         features: [
@@ -64,7 +64,7 @@ const tiers: PricingTier[] = [
         name: 'Business Package',
         id: '1',
         href: '/subscribe',
-        price: { '1': '$4,999+', '2': '$69 - 119', '3': '$699 - 1,199' },
+        price: { '1': '$4,999+', '2': '$89 - 169', '3': '$899 - 1,699' },
         discountPrice: { '1': '', '2': '', '3': '' },
         description: `Ideal for bigger websites and e-commerce.`,
         features: [
