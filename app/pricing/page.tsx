@@ -8,8 +8,9 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-menu";
 import {OurServices} from "@/app/(home)/components/our-services";
-import {Components} from "@/app/(home)/components/components";
+import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";
+import MyDropdown from "@/components/my-dropdown";
 
 export interface PricingTierFrequency {
     id: string;
@@ -144,26 +145,9 @@ export default function PricingPage() {
 
     return (
         <div
-            className={cn('flex flex-col w-full items-center', styles.fancyOverlay)}
+            className={cn('flex flex-col w-full items-center p-1', styles.fancyOverlay)}
         >
-            <Dropdown>
-                <TriggerWrapper>
-                    <Trigger>Our Services</Trigger>
-                    <Trigger>Components</Trigger>
-                    <Trigger>Blog</Trigger>
-                </TriggerWrapper>
-                <Tabs>
-                    <Tab>
-                        <OurServices/>
-                    </Tab>
-                    <Tab>
-                        <Components/>
-                    </Tab>
-                    <Tab>
-                        <Services/>
-                    </Tab>
-                </Tabs>
-            </Dropdown>
+            <MyDropdown />
 
             <div className="w-full flex flex-col items-center mt-6">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">

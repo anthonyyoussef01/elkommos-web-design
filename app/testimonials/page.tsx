@@ -6,8 +6,9 @@ import {cn} from "@/lib/utils";
 import styles from "@/app/pricing/pricing.module.css";
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-menu";
 import {OurServices} from "@/app/(home)/components/our-services";
-import {Components} from "@/app/(home)/components/components";
+import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";
+import MyDropdown from "@/components/my-dropdown";
 
 
 interface Testimonial {
@@ -85,26 +86,9 @@ const testimonials: Testimonial[][] = [
 export default function FUITestimonialWithGrid() {
     return (
         <div
-            className={cn('flex flex-col w-full items-center', styles.fancyOverlay)}
+            className={cn('flex flex-col w-full items-center p-1', styles.fancyOverlay)}
         >
-            <Dropdown>
-                <TriggerWrapper>
-                    <Trigger>Our Services</Trigger>
-                    <Trigger>Components</Trigger>
-                    <Trigger>Blog</Trigger>
-                </TriggerWrapper>
-                <Tabs>
-                    <Tab>
-                        <OurServices/>
-                    </Tab>
-                    <Tab>
-                        <Components/>
-                    </Tab>
-                    <Tab>
-                        <Services/>
-                    </Tab>
-                </Tabs>
-            </Dropdown>
+            <MyDropdown />
 
             <section
                 id="testimonials"
