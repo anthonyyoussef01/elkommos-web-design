@@ -1,4 +1,3 @@
-
 import clsx from 'clsx';
 import Image from 'next/image'
 import React, {ComponentPropsWithoutRef} from "react";
@@ -88,21 +87,24 @@ export default function FUITestimonialWithGrid() {
         <div
             className={cn('flex flex-col w-full items-center p-1', styles.fancyOverlay)}
         >
-            <MyDropdown />
+            <MyDropdown/>
 
             <section
                 id="testimonials"
                 aria-label="What our customers are saying"
-                className=" relative bg-transpaarent py-20 sm:py-10 z-1 bg-page-gradient"
+                className=" relative bg-transpaarent mt-6 z-1 bg-page-gradient"
             >
-                <Container>
+                <div
+                    className={clsx("mx-auto max-w-7xl px-4 sm:px-6 lg:px-8")}
+                >
                     <div className="mx-auto max-w-2xl md:text-center">
-                        <h2 className="font-geist text-3xl tracking-tighter text-black dark:text-gray-100 sm:text-6xl">
-                            <span className='bg-gradient-to-br from-red-400 via-red-300 to-red-700 bg-clip-text text-transparent'>
+                        <h2 className="text-black dark:text-white text-4xl sm:max-w-none md:text-6xl !leading-tight">
+                            <span
+                                className='bg-gradient-to-br from-red-400 via-red-300 to-red-700 bg-clip-text text-transparent'>
                                 Loved
                             </span> by businesses worldwide.
                         </h2>
-                        <p className="mt-4 text-lg tracking-tight text-black dark:text-gray-300 font-geist">
+                        <p className="text-black dark:text-white mt-6 md:text-xl lg:text-center">
                             Our software is so simple that people can’t help but fall in love
                             with it. Simplicity is easy when you just skip tons of
                             mission-critical features.
@@ -117,15 +119,18 @@ export default function FUITestimonialWithGrid() {
                                 <ul role="list" className="flex flex-col gap-y-6 sm:gap-y-8">
                                     {column.map((testimonial, testimonialIndex) => (
                                         <li key={testimonialIndex}>
-                                            <figure className="relative rounded-2xl bg-transparent transform-gpu [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset] p-6 shadow-xl ">
+                                            <figure
+                                                className="relative rounded-2xl bg-transparent transform-gpu [border:1px_solid_rgba(255,255,255,.1)] [box-shadow:0_-20px_80px_-20px_#8686f01f_inset] p-6 shadow-xl ">
                                                 <blockquote className="relative">
                                                     <p className="text-lg tracking-tight text-black dark:text-gray-100">
                                                         {testimonial.content}
                                                     </p>
                                                 </blockquote>
-                                                <figcaption className="relative mt-6 flex items-center justify-between border-t border-slate-100/10 pt-6">
+                                                <figcaption
+                                                    className="relative mt-6 flex items-center justify-between border-t border-slate-100/10 pt-6">
                                                     <div>
-                                                        <div className="font-display text-base text-black dark:text-gray-100">
+                                                        <div
+                                                            className="font-display text-base text-black dark:text-gray-100">
                                                             {testimonial.author.name}
                                                         </div>
                                                         <div className="mt-1 text-sm text-slate-500">
@@ -149,19 +154,8 @@ export default function FUITestimonialWithGrid() {
                             </li>
                         ))}
                     </ul>
-                </Container>
+                </div>
             </section>
         </div>
     )
-}
-export function Container({
-                              className,
-                              ...props
-                          }: ComponentPropsWithoutRef<"div">) {
-    return (
-        <div
-            className={clsx("mx-auto max-w-7xl px-4 sm:px-6 lg:px-8", className)}
-            {...props}
-        />
-    );
 }

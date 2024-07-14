@@ -1,16 +1,20 @@
 'use client';
 import React, {ReactNode, useState} from 'react';
-import { cn } from '@/lib/utils';
+import {cn} from '@/lib/utils';
 import styles from './pricing.module.css';
 
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Label } from '@/components/ui/label';
-import { Button } from '@/components/ui/button';
+import {RadioGroup, RadioGroupItem} from '@/components/ui/radio-group';
+import {Label} from '@/components/ui/label';
+import {Button} from '@/components/ui/button';
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-menu";
 import {OurServices} from "@/app/(home)/components/our-services";
 import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";
 import MyDropdown from "@/components/my-dropdown";
+import {Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger} from "@/components/ui/animated-modal";
+import {motion} from 'framer-motion';
+import Image from 'next/image';
+import ContactRequestModal from "@/app/pricing/components/contact-request-modal";
 
 export interface PricingTierFrequency {
     id: string;
@@ -35,9 +39,9 @@ export interface PricingTier {
 }
 
 const frequencies: PricingTierFrequency[] = [
-    { id: '1', value: '1', label: 'One-time fee', priceSuffix: '' },
-    { id: '2', value: '2', label: 'Monthly', priceSuffix: '/month' },
-    { id: '3', value: '3', label: 'Annually', priceSuffix: '/year' },
+    {id: '1', value: '1', label: 'One-time fee', priceSuffix: ''},
+    {id: '2', value: '2', label: 'Monthly', priceSuffix: '/month'},
+    {id: '3', value: '3', label: 'Annually', priceSuffix: '/year'},
 ];
 
 const tiers: PricingTier[] = [
@@ -45,8 +49,8 @@ const tiers: PricingTier[] = [
         name: 'Starter Package',
         id: '0',
         href: '/subscribe',
-        price: { '1': '$999 - 4,999', '2': '$45 - 89', '3': '$459 - 899' },
-        discountPrice: { '1': '', '2': '', '3': '' },
+        price: {'1': '$999 - 4,999', '2': '$45 - 89', '3': '$459 - 899'},
+        discountPrice: {'1': '', '2': '', '3': ''},
         description: `Perfect for small websites (up to 5 pages`,
         features: [
             `Professional design and setup`,
@@ -65,8 +69,8 @@ const tiers: PricingTier[] = [
         name: 'Business Package',
         id: '1',
         href: '/subscribe',
-        price: { '1': '$4,999+', '2': '$89 - 169', '3': '$899 - 1,699' },
-        discountPrice: { '1': '', '2': '', '3': '' },
+        price: {'1': '$4,999+', '2': '$89 - 169', '3': '$899 - 1,699'},
+        discountPrice: {'1': '', '2': '', '3': ''},
         description: `Ideal for bigger websites and e-commerce.`,
         features: [
             `Everything in the Starter Package`,
@@ -87,8 +91,8 @@ const tiers: PricingTier[] = [
         name: 'Custom Package',
         id: '2',
         href: '/contact-us',
-        price: { '1': '$39k+', '2': '$499+', '3': '4999+' },
-        discountPrice: { '1': '', '2': '', '3': '' },
+        price: {'1': '$39k+', '2': '$499+', '3': '4,999+'},
+        discountPrice: {'1': '', '2': '', '3': ''},
         description: `For fully custom websites coded from scratch using your preferred stack.`,
         features: [
             `Everything in the Business Package`,
@@ -106,7 +110,7 @@ const tiers: PricingTier[] = [
     },
 ];
 
-const CheckIcon = ({ className }: { className?: string }) => {
+const CheckIcon = ({className}: { className?: string }) => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -126,6 +130,14 @@ const CheckIcon = ({ className }: { className?: string }) => {
 export default function PricingPage() {
     const [frequency, setFrequency] = useState(frequencies[0]);
     const bannerText = 'Save 10% off all plans for a limited time';
+
+    const images = [
+        "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ];
 
     tiers.forEach(tier => {
         // Clone the original features list to avoid mutating the original array
@@ -147,7 +159,7 @@ export default function PricingPage() {
         <div
             className={cn('flex flex-col w-full items-center p-1', styles.fancyOverlay)}
         >
-            <MyDropdown />
+            <MyDropdown/>
 
             <div className="w-full flex flex-col items-center mt-6">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
@@ -217,7 +229,7 @@ export default function PricingPage() {
                             tiers.length === 3 ? 'lg:grid-cols-3' : '',
                         )}
                     >
-                        {tiers.map((tier) => (
+                        {tiers.map((tier: PricingTier) => (
                             <div
                                 key={tier.id}
                                 className={cn(
@@ -225,7 +237,7 @@ export default function PricingPage() {
                                         ? '!bg-gray-900 ring-gray-900 dark:!bg-gray-100 dark:ring-gray-100'
                                         : 'bg-white dark:bg-gray-900/80 ring-gray-300/70 dark:ring-gray-700',
                                     'max-w-xs ring-1 rounded-3xl p-8 xl:p-10',
-                                    tier.highlighted ? styles.fancyGlassContrast : '',
+                                    //tier.highlighted ? styles.fancyGlassContrast : '',
                                 )}
                             >
                                 <h3
@@ -285,29 +297,14 @@ export default function PricingPage() {
                     </span>
                                     ) : null}
                                 </p>
-                                <a
-                                    href={tier.href}
-                                    aria-describedby={tier.id}
+                                <div
                                     className={cn(
                                         'flex mt-6 shadow-sm',
                                         tier.soldOut ? 'pointer-events-none' : '',
                                     )}
                                 >
-                                    <Button
-                                        size="lg"
-                                        disabled={tier.soldOut}
-                                        className={cn(
-                                            'w-full text-black dark:text-white',
-                                            !tier.highlighted && !tier.featured
-                                                ? 'bg-gray-100 dark:bg-gray-600'
-                                                : 'bg-red-300 hover:bg-red-400 dark:bg-red-600 dark:hover:bg-red-700',
-                                            tier.featured || tier.soldOut ? 'bg-white dark:bg-neutral-900 hover:bg-gray-200 dark:hover:bg-black' : 'hover:opacity-80 transition-opacity',
-                                        )}
-                                        variant={tier.highlighted ? 'default' : 'outline'}
-                                    >
-                                        {tier.soldOut ? 'Sold out' : tier.cta}
-                                    </Button>
-                                </a>
+                                    <ContactRequestModal tier={tier} />
+                                </div>
 
                                 <ul
                                     className={cn(
