@@ -116,24 +116,24 @@ function WorkflowPage(): React.JSX.Element {
                     </div>
                 </div>
                 {/*<StickyScroll content={content} />*/}
-                <Accordion type="single" collapsible className="w-10/12">
+                <Accordion type="single" collapsible className="w-10/12 md:text-xl">
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Initial Consultation</AccordionTrigger>
-                        <AccordionContent>
+                        <AccordionContent className="md:text-lg">
                             We start with a detailed consultation to understand your business needs, goals, and vision
                             for the website.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Proposal & Agreement</AccordionTrigger>
-                        <AccordionContent>
+                        <AccordionContent className="md:text-lg">
                             Based on our discussion, we provide a detailed proposal outlining the project scope,
                             timeline, and cost. Once agreed, we move forward with the project.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Design & Development</AccordionTrigger>
-                        <AccordionContent>
+                        <AccordionContent className="md:text-lg">
                             We design and develop your website, ensuring it’s tailored to your brand and optimized for
                             performance.
                             <br/>
@@ -150,21 +150,21 @@ function WorkflowPage(): React.JSX.Element {
                     </AccordionItem>
                     <AccordionItem value="item-4">
                         <AccordionTrigger>Review & Feedback</AccordionTrigger>
-                        <AccordionContent>
+                        <AccordionContent className="md:text-lg">
                             We present the initial version of your website for your review. Your feedback is essential
                             to refine and perfect the site.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-5">
                         <AccordionTrigger>Testing & Launch</AccordionTrigger>
-                        <AccordionContent>
+                        <AccordionContent className="md:text-lg">
                             We rigorously test your website to ensure it’s fully functional and bug-free. Once approved,
                             we launch the website and monitor its performance.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-6">
                         <AccordionTrigger>Ongoing Support</AccordionTrigger>
-                        <AccordionContent>
+                        <AccordionContent className="md:text-lg">
                             Post-launch, we provide continuous support and maintenance to ensure your website remains
                             up-to-date and runs smoothly.
                         </AccordionContent>
@@ -189,7 +189,7 @@ function WorkflowPage(): React.JSX.Element {
                 <div
                     className="w-full lg:w-auto mx-auto max-w-7xl lg:flex lg:flex-col lg:content-center text-center">
                     <p className="text-black dark:text-white mt-6 md:text-xl lg:text-center">
-                        By choosing us for your website development needs, you can expect a dedicated team of
+                        By choosing us for your application development needs, you can expect a dedicated team of
                         professionals committed to delivering high-quality, customized solutions tailored to your
                         business goals. Our comprehensive workflow ensures a smooth and efficient process from initial
                         consultation to ongoing support, guaranteeing your satisfaction every step of the way. Contact
