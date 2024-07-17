@@ -11,6 +11,8 @@ import {StickyScroll} from "@/components/ui/sticky-scroll-reveal";
 import Image from "next/image";
 import MyDropdown from "@/components/my-dropdown";
 import {Accordion, AccordionContent, AccordionItem, AccordionTrigger} from "@/components/ui/accordion";
+import {GoogleGeminiEffect} from "@/components/ui/google-gemini-effect";
+import {useScroll, useTransform} from "framer-motion";
 
 const content = [
     {
@@ -86,11 +88,23 @@ const content = [
 ];
 
 function WorkflowPage(): React.JSX.Element {
+    const ref = React.useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start start", "end start"],
+    });
+
+    const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
+    const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
+    const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
+    const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
+    const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
+
     return (
         <div
             className={cn('flex flex-col w-full items-center p-1', styles.fancyOverlay)}
         >
-            <MyDropdown />
+            <MyDropdown/>
 
             <div className="w-full flex flex-col items-center mt-6">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
@@ -106,20 +120,23 @@ function WorkflowPage(): React.JSX.Element {
                     <AccordionItem value="item-1">
                         <AccordionTrigger>Initial Consultation</AccordionTrigger>
                         <AccordionContent>
-                            We start with a detailed consultation to understand your business needs, goals, and vision for the website.
+                            We start with a detailed consultation to understand your business needs, goals, and vision
+                            for the website.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-2">
                         <AccordionTrigger>Proposal & Agreement</AccordionTrigger>
                         <AccordionContent>
-                            Based on our discussion, we provide a detailed proposal outlining the project scope, timeline, and cost. Once agreed, we move forward with the project.
+                            Based on our discussion, we provide a detailed proposal outlining the project scope,
+                            timeline, and cost. Once agreed, we move forward with the project.
                         </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="item-3">
                         <AccordionTrigger>Design & Development</AccordionTrigger>
                         <AccordionContent>
-                            We design and develop your website, ensuring it’s tailored to your brand and optimized for performance.
-                            <br />
+                            We design and develop your website, ensuring it’s tailored to your brand and optimized for
+                            performance.
+                            <br/>
                             We will design anything from a{" "}
                             <LinkPreview url="https://lily-resume.vercel.app" className="font-bold">
                                 small personal site
@@ -148,10 +165,37 @@ function WorkflowPage(): React.JSX.Element {
                     <AccordionItem value="item-6">
                         <AccordionTrigger>Ongoing Support</AccordionTrigger>
                         <AccordionContent>
-                            Post-launch, we provide continuous support and maintenance to ensure your website remains up-to-date and runs smoothly.
+                            Post-launch, we provide continuous support and maintenance to ensure your website remains
+                            up-to-date and runs smoothly.
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
+            </div>
+            <div
+                className="h-[400vh] w-full dark:border dark:border-white/[0.1] rounded-md relative overflow-clip"
+                ref={ref}
+            >
+                <GoogleGeminiEffect
+                    pathLengths={[
+                        pathLengthFirst,
+                        pathLengthSecond,
+                        pathLengthThird,
+                        pathLengthFourth,
+                        pathLengthFifth,
+                    ]}
+                />
+            </div>
+            <div className="w-full flex flex-col items-center mb-8">
+                <div
+                    className="w-full lg:w-auto mx-auto max-w-7xl lg:flex lg:flex-col lg:content-center text-center">
+                    <p className="text-black dark:text-white mt-6 md:text-xl lg:text-center">
+                        By choosing us for your website development needs, you can expect a dedicated team of
+                        professionals committed to delivering high-quality, customized solutions tailored to your
+                        business goals. Our comprehensive workflow ensures a smooth and efficient process from initial
+                        consultation to ongoing support, guaranteeing your satisfaction every step of the way. Contact
+                        us today to get started on your journey to a successful online presence.
+                    </p>
+                </div>
             </div>
         </div>
     );
