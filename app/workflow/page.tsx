@@ -138,11 +138,11 @@ function WorkflowPage(): React.JSX.Element {
                             performance.
                             <br/>
                             We will design anything from a{" "}
-                            <LinkPreview url="https://lily-resume.vercel.app" className="font-bold">
+                            <LinkPreview url="https://lily-resume.vercel.app" className="font-bold bg-gradient-to-bl from-blue-300 via-red-500 to-indigo-400 text-transparent bg-clip-text">
                                 small personal site
                             </LinkPreview>{" "}
                             to a{" "}
-                            <LinkPreview url="https://www.mahzuzah.com/" className="font-bold">
+                            <LinkPreview url="https://www.mahzuzah.com/" className="font-bold bg-gradient-to-br from-yellow-500 via-red-600 to-orange-400 text-transparent bg-clip-text">
                                 large e-commerce store
                             </LinkPreview>
                             .
