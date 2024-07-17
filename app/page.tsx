@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import {HeroParallax} from "@/components/ui/hero-parallax";
-import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-menu";
+import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-bar";
 import {OurServices} from "@/app/(home)/components/our-services";
 import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";

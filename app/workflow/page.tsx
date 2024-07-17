@@ -3,7 +3,7 @@ import React from "react";
 import {LinkPreview} from "@/components/ui/link-preview";
 import {cn} from "@/lib/utils";
 import styles from "@/app/pricing/pricing.module.css";
-import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-menu";
+import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-bar";
 import {OurServices} from "@/app/(home)/components/our-services";
 import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";

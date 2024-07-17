@@ -1,50 +1,54 @@
 import {Pointer} from "@/components/ui/follow-pointer";
+import {useTheme} from "next-themes";
 
-export const Technologies = () => (
-    <div
-        className="grid grid-cols-2 gap-4 p-4 drop-shadow-[0_3px_3px_rgba(240,240,240,0.9)] dark:drop-shadow-[0_2.2px_2.2px_rgba(0,0,0,0.8)]"
-    >
-        <a
-            href={'/tech-stack'}
-            className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
+export const Technologies = () => {
+    const {theme} = useTheme();
+
+    return (
+        <div
+            className="grid grid-cols-2 gap-4 p-4 drop-shadow-[0_3px_3px_rgba(240,240,240,0.9)] dark:drop-shadow-[0_2.2px_2.2px_rgba(0,0,0,0.8)]"
         >
-            <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
-                Tech Stack{' '}
-                <svg
-                    viewBox="0 0 12 12"
-                    width="10px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="stransition-all duration-100 dark:fill-neutral-500 fill-neutral-900"
-                >
-                    <path d="M11 9.283V1H2.727v1.44h5.83L1 9.99 2.01 11l7.556-7.55v5.833H11Z" />
-                </svg>
-            </h3>
-            <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
-                Technologies that our team has expertise & loves working with
-            </p>
-        </a>
-        <a
-            href={'/advanced-technologies'}
-            className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
-        >
-            <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
-                Advanced Technologies{' '}
-                <svg
-                    viewBox="0 0 12 12"
-                    width="10px"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="stransition-all duration-100 dark:fill-neutral-500 fill-neutral-900"
-                >
-                    <path d="M11 9.283V1H2.727v1.44h5.83L1 9.99 2.01 11l7.556-7.55v5.833H11Z" />
-                </svg>
-            </h3>
-            <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
-                Services & emerging technologies that our team offers and is excited about
-            </p>
-        </a>
-        <span
-            className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
-        >
+            <a
+                href={'/tech-stack'}
+                className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
+            >
+                <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
+                    Tech Stack{' '}
+                    <svg
+                        viewBox="0 0 12 12"
+                        width="10px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="stransition-all duration-100 dark:fill-neutral-500 fill-neutral-900"
+                    >
+                        <path d="M11 9.283V1H2.727v1.44h5.83L1 9.99 2.01 11l7.556-7.55v5.833H11Z"/>
+                    </svg>
+                </h3>
+                <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
+                    Technologies that our team has expertise & loves working with
+                </p>
+            </a>
+            <a
+                href={'/advanced-technologies'}
+                className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
+            >
+                <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
+                    Advanced Technologies{' '}
+                    <svg
+                        viewBox="0 0 12 12"
+                        width="10px"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="stransition-all duration-100 dark:fill-neutral-500 fill-neutral-900"
+                    >
+                        <path d="M11 9.283V1H2.727v1.44h5.83L1 9.99 2.01 11l7.556-7.55v5.833H11Z"/>
+                    </svg>
+                </h3>
+                <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
+                    Services & emerging technologies that our team offers and is excited about
+                </p>
+            </a>
+            <span
+                className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
+            >
             <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
                 Blog{' '}
                 <svg id='Coming_Soon_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
@@ -61,7 +65,7 @@ export const Technologies = () => (
                                 strokeDashoffset: 0,
                                 strokeLinejoin: "miter",
                                 strokeMiterlimit: 4,
-                                fill: "rgb(0,0,0)",
+                                fill: theme === "dark" ? "rgb(255,255,255)" : "rgb(0,0,0)",
                                 fillRule: "nonzero",
                                 opacity: 1
                             }}
@@ -75,9 +79,9 @@ export const Technologies = () => (
                 The latest articles and insights from our team
             </p>
         </span>
-        <span
-            className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
-        >
+            <span
+                className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
+            >
             <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
                 Case Studies{' '}
                 <svg id='Coming_Soon_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
@@ -94,7 +98,7 @@ export const Technologies = () => (
                                 strokeDashoffset: 0,
                                 strokeLinejoin: "miter",
                                 strokeMiterlimit: 4,
-                                fill: "rgb(0,0,0)",
+                                fill: theme === "dark" ? "rgb(255,255,255)" : "rgb(0,0,0)",
                                 fillRule: "nonzero",
                                 opacity: 1
                             }}
@@ -108,5 +112,6 @@ export const Technologies = () => (
                 Real-world examples of how we have helped businesses grow
             </p>
         </span>
-    </div>
-)
+        </div>
+    );
+}
