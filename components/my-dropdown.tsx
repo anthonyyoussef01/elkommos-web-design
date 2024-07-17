@@ -5,7 +5,7 @@ import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/drop
 import {OurServices} from "@/app/(home)/components/our-services";
 import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 import {
     DropdownMenu,
@@ -17,19 +17,16 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 const MyDropdown = () => {
-    const { setTheme } = useTheme();
+    const { setTheme, theme, resolvedTheme } = useTheme();
+    const [iconSrc, setIconSrc] = useState('/logo_light.svg');
+    useEffect(() => {
+        // Use resolvedTheme for checking as it accounts for system preferences
+        const currentTheme = theme === 'system' ? resolvedTheme : theme;
+        setIconSrc(currentTheme === 'dark' ? '/logo_dark.svg' : '/logo_light.svg');
+    }, [theme, resolvedTheme]);
 
     return (
         <Dropdown>
-            <a href={'/'} className={'rounded-full'}>
-                <Image
-                    className="h-10 w-10 object-cover rounded-full"
-                    src={'https://images.unsplash.com/photo-1620288627223-53302f4e8c74?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
-                    alt="EY Development Services"
-                    width={150}
-                    height={150}
-                />
-            </a>
             <TriggerWrapper>
                 <Trigger>Our Services</Trigger>
                 <Trigger>Technologies</Trigger>

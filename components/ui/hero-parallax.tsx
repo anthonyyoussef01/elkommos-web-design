@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {
     motion,
     useScroll,
@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import BlurIn from "@/components/ui/blur-in";
+import {useTheme} from "next-themes";
 
 export const HeroParallax = ({
                                  products,
@@ -103,8 +104,23 @@ export const HeroParallax = ({
 };
 
 export const Header = () => {
+    const { theme, resolvedTheme } = useTheme();
+    const [iconSrc, setIconSrc] = useState('/logo_light.svg');
+    useEffect(() => {
+        // Use resolvedTheme for checking as it accounts for system preferences
+        const currentTheme = theme === 'system' ? resolvedTheme : theme;
+        setIconSrc(currentTheme === 'dark' ? '/logo_dark.svg' : '/logo_light.svg');
+    }, [theme, resolvedTheme]);
+
     return (
-        <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0 z-10">
+        <div className="max-w-7xl relative mx-auto py-5 md:py-10 px-4 w-full  left-0 top-0 z-10">
+            <Image
+                className={"h-56 w-56 object-cover rounded-full mb-2 dark:bg-black bg-white"}
+                src={iconSrc}
+                alt="EY Development Services"
+                width={150}
+                height={150}
+            />
             <BlurIn
                 word="The EY"
                 className="text-2xl md:text-7xl font-bold dark:text-white"
