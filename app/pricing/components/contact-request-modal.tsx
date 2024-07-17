@@ -2,22 +2,39 @@ import {Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger} from "@/compo
 import {cn} from "@/lib/utils";
 import {motion} from "framer-motion";
 import Image from "next/image";
-import React from "react";
-import {PricingTier} from "@/app/pricing/page";
+import React, {useState} from "react";
+import {PricingTier, PricingTierFrequency} from "@/app/pricing/page";
 import {PhoneInput} from "@/components/ui/phone-input";
 
 interface ContactRequestModalProps {
   tier: PricingTier;
+  frequency: PricingTierFrequency;
 }
 
-const ContactRequestModal = ({ tier }: ContactRequestModalProps) => {
-    const images = [
-        "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    ];
+const ContactRequestModal = ({ tier, frequency }: ContactRequestModalProps) => {
+    const [formData, setFormData] = useState({
+        name: '',
+        company: '',
+        email: '',
+        phone: '', // Assuming PhoneInput component properly updates this field
+        projectDetails: '',
+        selectedPackage: tier.name,
+        selectedFrequency: frequency.value,
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("Form Data:", formData);
+        // Here you would typically send the formData to your server or backend service
+    };
 
     return (
         <Modal>
@@ -42,26 +59,40 @@ const ContactRequestModal = ({ tier }: ContactRequestModalProps) => {
                     <h4 className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
                     Request a Quote
                     </h4>
-                    <form className="space-y-4">
+                    <form className="space-y-4" onSubmit={handleSubmit}>
                         <input
                             type="text"
+                            name="name"
                             placeholder="Your Name"
                             className="w-full px-4 py-2 border rounded-md"
+                            value={formData.name}
+                            onChange={handleChange}
                         />
                         <input
                             type="text"
+                            name="company"
                             placeholder="Your Company"
                             className="w-full px-4 py-2 border rounded-md"
+                            value={formData.company}
+                            onChange={handleChange}
                         />
                         <input
                             type="email"
+                            name="email"
                             placeholder="Your Email"
                             className="w-full px-4 py-2 border rounded-md"
+                            value={formData.email}
+                            onChange={handleChange}
                         />
-                        <PhoneInput />
+                        <PhoneInput
+                            value={formData.phone}
+                            onChange={(phone) => setFormData(prevState => ({...prevState, phone}))}
+                        />
                         <textarea
+                            name="projectDetails"
                             placeholder="Tell us more about your project"
                             className="w-full px-4 py-2 border rounded-md"
+                            onChange={handleChange}
                         />
                     </form>
                 </ModalContent>
@@ -73,7 +104,7 @@ const ContactRequestModal = ({ tier }: ContactRequestModalProps) => {
                     <button
                         type="submit"
                         className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                        Send Message
+                        Submit
                     </button>
                 </ModalFooter>
             </ModalBody>

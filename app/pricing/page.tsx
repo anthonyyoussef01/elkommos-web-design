@@ -188,7 +188,7 @@ export default function PricingPage() {
                             <RadioGroup
                                 defaultValue={frequency.value}
                                 onValueChange={(value: string) => {
-                                    setFrequency(frequencies.find((f) => f.value === value)!);
+                                    setFrequency(frequencies.find((f: PricingTierFrequency) => f.value === value)!);
                                 }}
                                 className="grid gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 bg-white dark:bg-black ring-1 ring-inset ring-gray-200/30 dark:ring-gray-800"
                                 style={{
@@ -303,7 +303,7 @@ export default function PricingPage() {
                                         tier.soldOut ? 'pointer-events-none' : '',
                                     )}
                                 >
-                                    <ContactRequestModal tier={tier} />
+                                    <ContactRequestModal tier={tier} frequency={frequency} />
                                 </div>
 
                                 <ul
