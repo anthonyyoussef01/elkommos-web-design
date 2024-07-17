@@ -49,7 +49,7 @@ export const Technologies = () => {
             <span
                 className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
             >
-            <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
+            <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'} title="Coming Soon">
                 Blog{' '}
                 <svg id='Coming_Soon_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
                      xmlnsXlink='http://www.w3.org/1999/xlink'>
@@ -82,7 +82,7 @@ export const Technologies = () => {
             <span
                 className={'hover:dark:bg-neutral-900 hover:bg-neutral-100 p-3 rounded-md transition-colors'}
             >
-            <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'}>
+            <h3 className={'dark:text-white text-neutral-950 flex items-center gap-1'} title="Coming Soon">
                 Case Studies{' '}
                 <svg id='Coming_Soon_24' width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'
                      xmlnsXlink='http://www.w3.org/1999/xlink'>
