@@ -23,7 +23,7 @@ export const Technologies = () => {
                         <path d="M11 9.283V1H2.727v1.44h5.83L1 9.99 2.01 11l7.556-7.55v5.833H11Z"/>
                     </svg>
                 </h3>
-                <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
+                <p className={'text-neutral-500 dark:text-neutral-400 text-xs md:text-sm'}>
                     Technologies that our team has expertise & loves working with
                 </p>
             </a>
@@ -42,7 +42,7 @@ export const Technologies = () => {
                         <path d="M11 9.283V1H2.727v1.44h5.83L1 9.99 2.01 11l7.556-7.55v5.833H11Z"/>
                     </svg>
                 </h3>
-                <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
+                <p className={'text-neutral-500 dark:text-neutral-400 text-xs md:text-sm'}>
                     Services & emerging technologies that our team offers and is excited about
                 </p>
             </a>
@@ -75,7 +75,7 @@ export const Technologies = () => {
                     </g>
                 </svg>
             </h3>
-            <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
+            <p className={'text-neutral-500 dark:text-neutral-400 text-xs md:text-sm'}>
                 The latest articles and insights from our team
             </p>
         </span>
@@ -108,7 +108,7 @@ export const Technologies = () => {
                     </g>
                 </svg>
             </h3>
-            <p className={'text-neutral-500 dark:text-neutral-400 text-sm'}>
+            <p className={'text-neutral-500 dark:text-neutral-400 text-xs md:text-sm'}>
                 Real-world examples of how we have helped businesses grow
             </p>
         </span>

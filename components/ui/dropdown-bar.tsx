@@ -154,5 +154,5 @@ export const Tab: React.FC<{ children: React.ReactNode; className?: string }> = 
                                                                                      children,
                                                                                      className
                                                                                  }) => {
-    return <div className={cn('h-full w-[500px]', className)}>{children}</div>
+    return <div className={cn('h-full w-[350px] md:w-[450px] lg:w-[500px]', className)}>{children}</div>
 }
