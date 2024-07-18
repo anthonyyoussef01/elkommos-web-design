@@ -50,7 +50,7 @@ export const TriggerWrapper: React.FC<{ children: React.ReactNode }> = ({ childr
                 <button
                     onMouseEnter={() => setAnimationDirection(i + 1)}
                     onClick={() => setAnimationDirection(i + 1)}
-                    className={`flex h-10 items-center gap-0.5 rounded-md px-4 py-2 text-sm font-medium text-neutral-950 transition-colors dark:text-white ${
+                    className={`flex h-10 items-center gap-0.5 rounded-md px-2 md:px-4 py-2 text-xs md:text-sm lg:text-base font-medium text-neutral-950 transition-colors dark:text-white ${
                         currentTab === i + 1 ? 'bg-neutral-100 dark:bg-neutral-800 [&>svg]:rotate-180' : ''
                     }`}>
                     {e}
