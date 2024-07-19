@@ -4,6 +4,7 @@ import "./globals.css";
 import {ThemeProvider} from "next-themes";
 import {NextFont} from "next/dist/compiled/@next/font";
 import {ReactNode} from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const exo: NextFont = Exo({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={exo.className}>
+        <Analytics/>
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"
