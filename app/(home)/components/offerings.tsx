@@ -1,4 +1,4 @@
-export const OurServices = () => (
+export const Offerings = () => (
     <div className="flex gap-4 p-4 w-full h-full drop-shadow-[0_3px_3px_rgba(240,240,240,0.9)] dark:drop-shadow-[0_2.2px_2.2px_rgba(0,0,0,0.8)]">
         <a
             href="/"

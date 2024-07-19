@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-bar";
-import {OurServices} from "@/app/(home)/components/our-services";
+import {Offerings} from "@/app/(home)/components/offerings";
 import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";
 import React, {useEffect, useState} from "react";
@@ -28,13 +28,13 @@ const MyDropdown = () => {
     return (
         <Dropdown>
             <TriggerWrapper>
-                <Trigger>Our Services</Trigger>
+                <Trigger>What we do</Trigger>
                 <Trigger>Technologies</Trigger>
                 <Trigger>Services & Information</Trigger>
             </TriggerWrapper>
             <Tabs>
                 <Tab>
-                    <OurServices />
+                    <Offerings />
                 </Tab>
                 <Tab>
                     <Technologies />

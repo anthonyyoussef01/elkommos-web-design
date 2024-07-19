@@ -4,7 +4,7 @@ import React, {ComponentPropsWithoutRef} from "react";
 import {cn} from "@/lib/utils";
 import styles from "@/app/pricing/pricing.module.css";
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-bar";
-import {OurServices} from "@/app/(home)/components/our-services";
+import {Offerings} from "@/app/(home)/components/offerings";
 import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";
 import MyDropdown from "@/components/my-dropdown";

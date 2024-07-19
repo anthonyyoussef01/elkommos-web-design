@@ -7,7 +7,7 @@ import {RadioGroup, RadioGroupItem} from '@/components/ui/radio-group';
 import {Label} from '@/components/ui/label';
 import {Button} from '@/components/ui/button';
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-bar";
-import {OurServices} from "@/app/(home)/components/our-services";
+import {Offerings} from "@/app/(home)/components/offerings";
 import {Technologies} from "@/app/(home)/components/technologies";
 import {Services} from "@/app/(home)/components/services";
 import MyDropdown from "@/components/my-dropdown";
@@ -69,7 +69,7 @@ const tiers: PricingTier[] = [
         name: 'Business Package',
         id: '1',
         href: '/subscribe',
-        price: {'1': '$4,999+', '2': '$89 - 169', '3': '$899 - 1,699'},
+        price: {'1': '$4,999+', '2': '$99 - 179', '3': '$999 - 1,799'},
         discountPrice: {'1': '', '2': '', '3': ''},
         description: `Ideal for bigger websites and e-commerce.`,
         features: [
@@ -93,7 +93,7 @@ const tiers: PricingTier[] = [
         href: '/contact-us',
         price: {'1': '$39k+', '2': '$499+', '3': '4,999+'},
         discountPrice: {'1': '', '2': '', '3': ''},
-        description: `For fully custom websites coded from scratch using your preferred stack.`,
+        description: `For fully custom websites or applications coded from scratch using your preferred stack.`,
         features: [
             `Everything in the Business Package`,
             `Custom code development (React, Sass, Tailwind, Angular, Next.js, etc.)`,
