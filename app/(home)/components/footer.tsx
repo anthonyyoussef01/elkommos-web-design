@@ -1,14 +1,39 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/OY8i6nhR960
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import {SVGProps} from "react";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { SVGProps } from "react";
 
 export default function Footer() {
+    const [email, setEmail] = useState<string>('');
+    const [message, setMessage] = useState<string>('');
+
+    const sendEmail = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        try {
+            const res = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await res.json();
+            if (res.ok) {
+                setMessage('Subscription successful!');
+            } else {
+                setMessage(`Subscription failed: ${data.message}`);
+            }
+            console.log(data);
+        } catch (error) {
+            const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+            console.error('Error:', errorMessage);
+            setMessage(`Subscription failed: ${errorMessage}`);
+        }
+    };
+
     return (
         <section className="w-full py-12 md:py-24 lg:py-32 bg-zinc-900 dark:bg-zinc-100">
             <div className="container px-4 md:px-6 flex flex-col items-center text-center">
@@ -19,12 +44,20 @@ export default function Footer() {
                     Subscribe to our newsletter and follow us on our social media.
                 </p>
                 <div className="w-full max-w-md space-y-2 my-4">
-                    <form className="flex space-x-2">
-                        <Input type="email" placeholder="Enter your email" className="max-w-lg flex-1 text-zinc-900 bg-white" />
+                    <form onSubmit={sendEmail} className="flex space-x-2">
+                        <Input
+                            type="email"
+                            placeholder="Enter your email"
+                            className="max-w-lg flex-1 text-zinc-900 bg-white"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
                         <Button type="submit" variant="outline" className="border-white">
                             Subscribe
                         </Button>
                     </form>
+                    {message && <p>{message}</p>}
                 </div>
                 <div className="flex justify-center space-x-4">
                     <Link href="#" aria-label="Facebook page" className="text-white dark:text-zinc-800" prefetch={false}>
@@ -42,7 +75,7 @@ export default function Footer() {
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
 function FacebookIcon(props: SVGProps<SVGSVGElement>) {
@@ -61,9 +94,8 @@ function FacebookIcon(props: SVGProps<SVGSVGElement>) {
         >
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
-    )
+    );
 }
-
 
 function InstagramIcon(props: SVGProps<SVGSVGElement>) {
     return (
@@ -83,9 +115,8 @@ function InstagramIcon(props: SVGProps<SVGSVGElement>) {
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
         </svg>
-    )
+    );
 }
-
 
 function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
     return (
@@ -105,9 +136,8 @@ function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
             <rect width="4" height="12" x="2" y="9" />
             <circle cx="4" cy="4" r="2" />
         </svg>
-    )
+    );
 }
-
 
 function TwitterIcon(props: SVGProps<SVGSVGElement>) {
     return (
@@ -125,5 +155,5 @@ function TwitterIcon(props: SVGProps<SVGSVGElement>) {
         >
             <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
         </svg>
-    )
+    );
 }
