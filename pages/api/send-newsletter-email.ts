@@ -1,4 +1,4 @@
-// pages/api/send-email.ts
+// pages/api/send-newsletter-email.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // Define the email options
         const mailOptions = {
             from: process.env.GMAIL_USER,
-            to: 'eywebdesigndev@gmail.com',
+            to: process.env.EMAIL_RECIPIENT,
             subject: 'Newsletter Subscription',
             text: `You have a new subscriber: ${email}`,
         };
