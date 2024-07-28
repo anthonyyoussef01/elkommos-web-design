@@ -12,7 +12,7 @@ export default function Footer() {
         e.preventDefault();
 
         try {
-            const res = await fetch('/api/send-email', {
+            const res = await fetch('/api/send-newsletter-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -23,6 +23,7 @@ export default function Footer() {
             const data = await res.json();
             if (res.ok) {
                 setMessage('Subscription successful!');
+                setEmail('');
             } else {
                 setMessage(`Subscription failed: ${data.message}`);
             }
@@ -47,6 +48,7 @@ export default function Footer() {
                     <form onSubmit={sendEmail} className="flex space-x-2">
                         <Input
                             type="email"
+                            name="email"
                             placeholder="Enter your email"
                             className="max-w-lg flex-1 text-zinc-900 bg-white"
                             value={email}
@@ -57,7 +59,7 @@ export default function Footer() {
                             Subscribe
                         </Button>
                     </form>
-                    {message && <p>{message}</p>}
+                    {message && <p className="text-white dark:text-zinc-800">{message}</p>}
                 </div>
                 <div className="flex justify-center space-x-4">
                     <Link href="#" aria-label="Facebook page" className="text-white dark:text-zinc-800" prefetch={false}>
