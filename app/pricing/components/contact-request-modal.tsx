@@ -2,9 +2,10 @@ import {Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger, useModal} fro
 import {cn} from "@/lib/utils";
 import {motion} from "framer-motion";
 import Image from "next/image";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {PricingTier, PricingTierFrequency} from "@/app/pricing/page";
 import {PhoneInput} from "@/components/ui/phone-input";
+import {Button} from "@/components/ui/button";
 
 interface ContactRequestModalProps {
   tier: PricingTier;
@@ -114,18 +115,19 @@ const ContactRequestModal = ({ tier, frequency }: ContactRequestModalProps) => {
                             onChange={handleChange}
                         />
                         <ModalFooter className="gap-4">
-                            <button
+                            <Button
                                 className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28"
+                                variant="outline"
                                 onClick={() => setOpen(false)}
                             >
                                 Cancel
-                            </button>
-                            <button
-                                type="submit"
+                            </Button>
+                            <Button
                                 className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28"
+                                type="submit"
                             >
                                 Submit
-                            </button>
+                            </Button>
                         </ModalFooter>
                     </form>
                 </ModalContent>

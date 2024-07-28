@@ -139,30 +139,30 @@ export const ModalBody = ({
 };
 
 export const ModalContent = ({
-                                 children,
-                                 className,
-                             }: {
+    children,
+    className,
+}: {
     children: ReactNode;
     className?: string;
 }) => {
     return (
-        <div className={cn("flex flex-col flex-1 p-8 md:p-10", className)}>
+        <div className={cn("flex flex-col flex-1 p-8 md:p-10 relative", className)}>
             {children}
         </div>
     );
 };
 
 export const ModalFooter = ({
-                                children,
-                                className,
-                            }: {
+    children,
+    className,
+}: {
     children: ReactNode;
     className?: string;
 }) => {
     return (
         <div
             className={cn(
-                "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900",
+                "flex justify-end p-4 bg-gray-100 dark:bg-neutral-900 w-full left-0 absolute bottom-0",
                 className
             )}
         >
@@ -195,7 +195,7 @@ const CloseIcon = () => {
     return (
         <button
             onClick={() => setOpen(false)}
-            className="absolute top-4 right-4 group"
+            className="absolute top-4 right-4 group z-10"
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"

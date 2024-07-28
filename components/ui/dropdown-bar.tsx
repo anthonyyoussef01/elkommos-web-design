@@ -3,6 +3,7 @@
 import React, { useState, createContext, useContext } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { cn } from "@/lib/utils";
+import {useTheme} from "next-themes";
 
 const DirectionContext = createContext<{
     direction: 'rtl' | 'ltr' | null
@@ -32,7 +33,7 @@ export const Dropdown: React.FC<{ children: React.ReactNode }> = ({ children }) 
             <CurrentTabContext.Provider value={{ currentTab }}>
                 <span
                     onMouseLeave={() => setAnimationDirection(null)}
-                    className={'relative flex h-fit gap-2 z-50'}>
+                    className={'relative flex h-fit gap-2 z-30'}>
                   {children}
                 </span>
             </CurrentTabContext.Provider>
@@ -91,6 +92,8 @@ export const Tabs: React.FC<{ children: React.ReactNode; className?: string }> =
                                                                                   }) => {
     const { currentTab } = useContext(CurrentTabContext)!
     const { direction } = useContext(DirectionContext)!
+    const { theme } = useTheme();
+
     return (
         <>
             <motion.div
@@ -107,8 +110,8 @@ export const Tabs: React.FC<{ children: React.ReactNode; className?: string }> =
                             opacity: 1,
                             scale: 1,
                             backdropFilter: 'blur(10px)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.01)'
-                    }
+                            backgroundColor: theme === 'dark' ? 'rgba(0, 0, 0, 0.4)' : 'rgba(256, 256, 256, 0.4)'
+                        }
                     : {
                         opacity: 0,
                         scale: 0.98,
@@ -116,7 +119,7 @@ export const Tabs: React.FC<{ children: React.ReactNode; className?: string }> =
                         backgroundColor: 'rgba(0, 0, 0, 0)'
                     }
                 }
-                className="absolute left-0 top-[calc(100%_+_6px)] w-auto">
+                className="absolute left-0 top-[calc(100%_+_6px)] w-auto rounded-lg">
                 <div className="absolute -top-[6px] left-0 right-0 h-[6px]" />
                 <div
                     className={cn(
