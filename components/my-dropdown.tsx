@@ -17,13 +17,7 @@ import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 const MyDropdown = () => {
-    const { setTheme, theme, resolvedTheme } = useTheme();
-    const [iconSrc, setIconSrc] = useState('/logo_light.svg');
-    useEffect(() => {
-        // Use resolvedTheme for checking as it accounts for system preferences
-        const currentTheme = theme === 'system' ? resolvedTheme : theme;
-        setIconSrc(currentTheme === 'dark' ? '/logo_dark.svg' : '/logo_light.svg');
-    }, [theme, resolvedTheme]);
+    const { setTheme } = useTheme();
 
     return (
         <Dropdown>

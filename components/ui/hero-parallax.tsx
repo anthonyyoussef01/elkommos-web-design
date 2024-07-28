@@ -104,19 +104,11 @@ export const HeroParallax = ({
 };
 
 export const Header = () => {
-    const { theme, resolvedTheme } = useTheme();
-    const [iconSrc, setIconSrc] = useState('/logo_light.svg');
-    useEffect(() => {
-        // Use resolvedTheme for checking as it accounts for system preferences
-        const currentTheme = theme === 'system' ? resolvedTheme : theme;
-        setIconSrc(currentTheme === 'dark' ? '/logo_dark.svg' : '/logo_light.svg');
-    }, [theme, resolvedTheme]);
-
     return (
         <div className="max-w-7xl relative mx-auto py-5 md:py-10 px-4 w-full  left-0 top-0 z-10">
             <Image
                 className={"h-56 w-56 object-cover rounded-full mb-2 dark:bg-black bg-white"}
-                src={iconSrc}
+                src={'logo.svg'}
                 alt="EY Development Services"
                 width={150}
                 height={150}
