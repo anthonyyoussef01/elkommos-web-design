@@ -1,4 +1,4 @@
-import {Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger} from "@/components/ui/animated-modal";
+import {Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger, useModal} from "@/components/ui/animated-modal";
 import {cn} from "@/lib/utils";
 import {motion} from "framer-motion";
 import Image from "next/image";
@@ -19,8 +19,9 @@ const ContactRequestModal = ({ tier, frequency }: ContactRequestModalProps) => {
         phone: '', // Assuming PhoneInput component properly updates this field
         projectDetails: '',
         selectedPackage: tier.name,
-        selectedFrequency: frequency.value,
+        selectedFrequency: frequency.label,
     });
+    const { setOpen } = useModal();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -30,14 +31,33 @@ const ContactRequestModal = ({ tier, frequency }: ContactRequestModalProps) => {
         }));
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Form Data:", formData);
-        // Here you would typically send the formData to your server or backend service
+
+        try {
+            const response = await fetch('/api/send-contact-request', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                console.log('Email sent successfully');
+                setOpen(false); // Close the modal on success
+            } else {
+                const errorData = await response.json();
+                console.error('Error sending email:', errorData.message);
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+        }
     };
 
     return (
-        <Modal>
+        <>
             <ModalTrigger
                 className={cn(
                     'w-full text-black dark:text-white',
@@ -94,21 +114,24 @@ const ContactRequestModal = ({ tier, frequency }: ContactRequestModalProps) => {
                             className="w-full px-4 py-2 border rounded-md"
                             onChange={handleChange}
                         />
+                        <ModalFooter className="gap-4">
+                            <button
+                                className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28"
+                                onClick={() => setOpen(false)}
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                type="submit"
+                                className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28"
+                            >
+                                Submit
+                            </button>
+                        </ModalFooter>
                     </form>
                 </ModalContent>
-                <ModalFooter className="gap-4">
-                    <button
-                        className="px-2 py-1 bg-gray-200 text-black dark:bg-black dark:border-black dark:text-white border border-gray-300 rounded-md text-sm w-28">
-                        Cancel
-                    </button>
-                    <button
-                        type="submit"
-                        className="bg-black text-white dark:bg-white dark:text-black text-sm px-2 py-1 rounded-md border border-black w-28">
-                        Submit
-                    </button>
-                </ModalFooter>
             </ModalBody>
-        </Modal>
+        </>
     );
 };
 

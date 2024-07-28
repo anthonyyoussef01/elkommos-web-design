@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         // Define the email options
         const mailOptions = {
             from: process.env.GMAIL_USER,
-            to: 'eywebdesigndev@gmail.com',
+            to: process.env.EMAIL_RECIPIENT,
             subject: 'Contact Request',
             text: `
                 Name: ${name}

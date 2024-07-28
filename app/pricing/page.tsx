@@ -15,6 +15,7 @@ import {Modal, ModalBody, ModalContent, ModalFooter, ModalTrigger} from "@/compo
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 import ContactRequestModal from "@/app/pricing/components/contact-request-modal";
+import ContactRequestParent from "@/app/pricing/components/contact-request-parent";
 
 export interface PricingTierFrequency {
     id: string;
@@ -303,7 +304,7 @@ export default function PricingPage() {
                                         tier.soldOut ? 'pointer-events-none' : '',
                                     )}
                                 >
-                                    <ContactRequestModal tier={tier} frequency={frequency} />
+                                    <ContactRequestParent tier={tier} frequency={frequency} />
                                 </div>
 
                                 <ul
