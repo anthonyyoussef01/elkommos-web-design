@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         } catch (error) {
             const errorMessage = (error instanceof Error) ? error.message : 'Unknown error';
             console.error('Error sending email:', errorMessage);
-            res.status(500).json({ message: 'Error sending email', error: errorMessage, email: process.env.GMAIL_USER, pass: process.env.GMAIL_PASS});
+            res.status(500).json({ message: 'Error sending email', error: errorMessage});
         }
     } else {
         res.status(405).json({ message: 'Method not allowed' });

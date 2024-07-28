@@ -33,7 +33,6 @@ const ContactRequestModal = ({ tier, frequency }: ContactRequestModalProps) => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Form Data:", formData);
 
         try {
             const response = await fetch('/api/send-contact-request', {
