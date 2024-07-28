@@ -106,13 +106,18 @@ export const HeroParallax = ({
 export const Header = () => {
     return (
         <div className="max-w-7xl relative mx-auto py-5 md:py-10 px-4 w-full  left-0 top-0 z-10">
-            <Image
-                className={"h-56 w-56 object-cover rounded-full mb-2 dark:bg-black bg-white"}
-                src={'logo.svg'}
-                alt="EY Development Services"
-                width={150}
-                height={150}
-            />
+            <BlurIn
+                word=""
+                className="h-56 w-56 object-cover rounded-full mb-2 dark:bg-black bg-white"
+            >
+                <Image
+                    src={'/logo.svg'}
+                    alt="EY Development Services"
+                    className="w-full h-full object-cover rounded-full"
+                    width={150}
+                    height={150}
+                />
+            </BlurIn>
             <BlurIn
                 word="The EY"
                 className="text-2xl md:text-7xl font-bold dark:text-white"

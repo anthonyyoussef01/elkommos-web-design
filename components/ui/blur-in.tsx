@@ -12,8 +12,9 @@ interface BlurIntProps {
         visible: { filter: string; opacity: number };
     };
     duration?: number;
+    children?: React.ReactNode;
 }
-const BlurIn = ({ word, className, variant, duration = 1 }: BlurIntProps) => {
+const BlurIn = ({ word, className, variant, duration = 1, children }: BlurIntProps) => {
     const defaultVariants = {
         hidden: { filter: "blur(10px)", opacity: 0 },
         visible: { filter: "blur(0px)", opacity: 1 },
@@ -30,7 +31,7 @@ const BlurIn = ({ word, className, variant, duration = 1 }: BlurIntProps) => {
                 className,
             )}
         >
-            {word}
+            {children || word}
         </motion.h1>
     );
 };
