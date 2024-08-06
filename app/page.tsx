@@ -12,13 +12,17 @@ import MyDropdown from "@/components/my-dropdown";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-1 overflow-x-hidden">
-      <MyDropdown />
+      <main className="flex min-h-screen flex-col items-center justify-between p-1 overflow-x-hidden">
+        <meta
+            name="keywords"
+            content="Elkommos Youssef Website and Application Development, web design, app development, system architecture, product engineering, portraits, event photography, product photography, artificial intelligence, videography, drone shots, Rockland, New York, New City, Hudson Valley, nj, new jersey"
+        />
+        <MyDropdown/>
 
-      <HeroParallax products={products} />
+        <HeroParallax products={products}/>
 
-      <Footer />
-    </main>
+        <Footer/>
+      </main>
   );
 }
 

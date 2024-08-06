@@ -57,13 +57,12 @@ const slugs: string[] = [
     "figma",
     "elasticsearch",
 ];
-
 const TechStackPage = () => {
     return (
         <div
             className={cn('flex flex-col w-full items-center p-1', styles.fancyOverlay)}
         >
-            <MyDropdown />
+            <MyDropdown/>
 
             <div className="w-full flex flex-col items-center mt-6">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center">
