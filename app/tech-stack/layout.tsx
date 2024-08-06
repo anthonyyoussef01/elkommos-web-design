@@ -21,7 +21,6 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
-                <title>EY Tech Stack</title>
                 <meta name="keywords" content={keywords}/>
             </head>
         <body className={exo.className}>

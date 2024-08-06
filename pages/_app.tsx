@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
             <Head>
-                <title>EY Digital Innovations | Web & App Development</title>
+                <title>EY Web & App Development</title>
                 <meta name="description"
                       content="EY Web & App Development specializes in web design, app development, system architecture, product engineering, portraits, event and product photography, artificial intelligence (AI), videography, and drone shots. Based in Rockland County, NY."/>
                 <meta name="keywords"
