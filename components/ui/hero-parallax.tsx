@@ -114,6 +114,7 @@ export const Header = () => {
                     src={'/logo.svg'}
                     alt="EY Development Services"
                     className="w-full h-full object-cover rounded-full"
+                    layout="responsive"
                     width={150}
                     height={150}
                 />
