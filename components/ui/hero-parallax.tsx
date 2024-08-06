@@ -119,8 +119,8 @@ export const Header = () => {
                     height={150}
                 />*/}
 
-                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="5000"
-                     zoomAndPan="magnify" viewBox="0 0 3750 3749.999967" height="5000"
+                <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="225"
+                     zoomAndPan="magnify" viewBox="0 0 3750 3749.999967" height="225"
                      preserveAspectRatio="xMidYMid meet" version="1.0">
                     <defs>
                         <g/>
@@ -286,7 +286,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2675.485659, 1169.121608)">
                             <g>
                                 <path
@@ -294,7 +294,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2762.27388, 1282.890827)">
                             <g>
                                 <path
@@ -302,7 +302,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2833.816429, 1409.610283)">
                             <g>
                                 <path
@@ -310,7 +310,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(900.892494, 2657.332906)">
                             <g>
                                 <path
@@ -318,7 +318,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(1093.096357, 2839.989084)">
                             <g>
                                 <path
@@ -326,7 +326,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(1232.647294, 2935.938023)">
                             <g>
                                 <path
@@ -334,12 +334,12 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(1403.521304, 3016.812632)">
                             <g/>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(1489.746338, 3050.511627)">
                             <g>
                                 <path
@@ -347,12 +347,12 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(1695.897857, 3093.272839)">
                             <g/>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(1786.67167, 3104.236504)">
                             <g>
                                 <path
@@ -360,7 +360,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(1975.562543, 3101.008684)">
                             <g>
                                 <path
@@ -368,7 +368,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2153.970923, 3071.37139)">
                             <g>
                                 <path
@@ -376,12 +376,12 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2322.043359, 3015.809013)">
                             <g/>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2407.822709, 2981.021498)">
                             <g>
                                 <path
@@ -389,7 +389,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2590.260234, 2869.928573)">
                             <g>
                                 <path
@@ -397,7 +397,7 @@ export const Header = () => {
                             </g>
                         </g>
                     </g>
-                    <g fill="#545454" fill-opacity="1">
+                    <g fill="#545454" fillOpacity="1">
                         <g transform="translate(2720.125385, 2762.188492)">
                             <g>
                                 <path
@@ -414,7 +414,7 @@ export const Header = () => {
                     <g clipPath="url(#d9e8653a81)">
                         <path fill="#545454"
                               d="M 1883.480469 463.914062 C 2658.363281 463.914062 3289.503906 1095.054688 3289.503906 1870.890625 C 3289.503906 2646.726562 2658.363281 3276.917969 1883.480469 3276.917969 C 1108.59375 3276.917969 477.453125 2645.773438 477.453125 1870.890625 C 476.5 1095.054688 1107.644531 463.914062 1883.480469 463.914062 Z M 1883.480469 3253.117188 C 2645.988281 3253.117188 3265.707031 2633.398438 3265.707031 1870.890625 C 3265.707031 1108.378906 2645.039062 487.710938 1883.480469 487.710938 C 1121.921875 487.710938 500.300781 1108.378906 500.300781 1870.890625 C 500.300781 2633.398438 1120.96875 3253.117188 1883.480469 3253.117188 Z M 1883.480469 3253.117188 "
-                              fill-opacity="1" fillRule="nonzero"/>
+                              fillOpacity="1" fillRule="nonzero"/>
                     </g>
                 </svg>
             </BlurIn>
