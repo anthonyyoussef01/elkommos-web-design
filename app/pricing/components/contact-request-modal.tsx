@@ -111,7 +111,7 @@ const ContactRequestModal = ({ tier, frequency }: ContactRequestModalProps) => {
                         <textarea
                             name="projectDetails"
                             placeholder="Tell us more about your project"
-                            className="w-full px-4 py-2 border rounded-md"
+                            className="w-full px-4 py-2 border rounded-md mb-12"
                             onChange={handleChange}
                         />
                         <ModalFooter className="gap-4">
