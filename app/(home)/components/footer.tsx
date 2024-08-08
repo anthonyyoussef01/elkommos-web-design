@@ -36,46 +36,60 @@ export default function Footer() {
     };
 
     return (
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-zinc-900 dark:bg-zinc-100">
-            <div className="container px-4 md:px-6 flex flex-col items-center text-center">
-                <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-white dark:text-zinc-800">
-                    Stay Connected
-                </h2>
-                <p className="mx-auto max-w-[700px] text-zinc-100 md:text-lg dark:text-zinc-800">
-                    Subscribe to our newsletter and follow us on our social media.
-                </p>
-                <div className="w-full max-w-md space-y-2 my-4">
-                    <form onSubmit={sendEmail} className="flex space-x-2">
-                        <Input
-                            type="email"
-                            name="email"
-                            placeholder="Enter your email"
-                            className="max-w-lg flex-1 text-zinc-900 bg-white"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                        <Button type="submit" variant="outline" className="border-white">
-                            Subscribe
-                        </Button>
-                    </form>
-                    {message && <p className="text-white dark:text-zinc-800">{message}</p>}
-                </div>
-                <div className="flex justify-center space-x-4">
-                    <Link href="#" aria-label="Facebook page" className="text-white dark:text-zinc-800" prefetch={false}>
-                        <FacebookIcon className="h-6 w-6" />
-                    </Link>
-                    <Link href="#" aria-label="Twitter profile" className="text-white dark:text-zinc-800" prefetch={false}>
-                        <TwitterIcon className="h-6 w-6" />
-                    </Link>
-                    <Link href="#" aria-label="Instagram profile" className="text-white dark:text-zinc-800" prefetch={false}>
-                        <InstagramIcon className="h-6 w-6" />
-                    </Link>
-                    <Link href="#" aria-label="LinkedIn profile" className="text-white dark:text-zinc-800" prefetch={false}>
-                        <LinkedinIcon className="h-6 w-6" />
-                    </Link>
+        <section className="w-full bg-zinc-900 dark:bg-zinc-100">
+            <div className="w-full py-12 md:py-24 lg:py-32 bg-zinc-900 dark:bg-zinc-100">
+                <div className="container px-4 md:px-6 flex flex-col items-center text-center">
+                    <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl lg:text-5xl/none text-white dark:text-zinc-800">
+                        Stay Connected
+                    </h2>
+                    <p className="mx-auto max-w-[700px] text-zinc-100 md:text-lg dark:text-zinc-800">
+                        Subscribe to our newsletter and follow us on our social media.
+                    </p>
+                    <div className="w-full max-w-md space-y-2 my-4">
+                        <form onSubmit={sendEmail} className="flex space-x-2">
+                            <Input
+                                type="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                className="max-w-lg flex-1 text-zinc-900 bg-white"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                            <Button type="submit" variant="outline" className="border-white">
+                                Subscribe
+                            </Button>
+                        </form>
+                        {message && <p className="text-white dark:text-zinc-800">{message}</p>}
+                    </div>
+
+                    {/*
+                    <div className="flex justify-center space-x-4">
+                        <Link href="#" aria-label="Facebook page" className="text-white dark:text-zinc-800" prefetch={false}>
+                            <FacebookIcon className="h-6 w-6" />
+                        </Link>
+                        <Link href="#" aria-label="Twitter profile" className="text-white dark:text-zinc-800" prefetch={false}>
+                            <TwitterIcon className="h-6 w-6" />
+                        </Link>
+                        <Link href="#" aria-label="Instagram profile" className="text-white dark:text-zinc-800" prefetch={false}>
+                            <InstagramIcon className="h-6 w-6" />
+                        </Link>
+                        <Link href="#" aria-label="LinkedIn profile" className="text-white dark:text-zinc-800" prefetch={false}>
+                            <LinkedinIcon className="h-6 w-6" />
+                        </Link>
+                    </div>
+                    */}
                 </div>
             </div>
+            <p className="
+                            text-xs tracking-tight mb-0.5
+                            mx-auto max-w-[700px] text-zinc-100 dark:text-zinc-800 text-center
+                            md:text-s md:mb-1 md:tracking-normal
+                            lg:mb-1.5 lg:tracking-wide
+                         "
+            >
+                Designed and developed by Anthony Elkommos Youssef. All rights reserved.
+            </p>
         </section>
     );
 }
