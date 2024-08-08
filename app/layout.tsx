@@ -5,6 +5,7 @@ import {ThemeProvider} from "next-themes";
 import {NextFont} from "next/dist/compiled/@next/font";
 import {ReactNode} from "react";
 import { Analytics } from "@vercel/analytics/react";
+import {GoogleAnalytics} from "@next/third-parties/google";
 
 const exo: NextFont = Exo({ subsets: ["latin"] });
 
@@ -31,6 +32,8 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
       </body>
+      {/*Google tag (gtag.js)*/}
+      <GoogleAnalytics gaId="G-G4LJH7RLRJ" />
     </html>
   );
 }

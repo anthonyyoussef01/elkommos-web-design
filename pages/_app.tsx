@@ -5,8 +5,6 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
-            {/*Google tag (gtag.js)*/}
-            <GoogleAnalytics gaId="G-G4LJH7RLRJ" />
             <Head>
                 <title>EY Web & App Development</title>
                 <meta name="description"
