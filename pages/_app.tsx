@@ -5,6 +5,8 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 function MyApp({ Component, pageProps }: AppProps) {
     return (
         <>
+            {/*Google tag (gtag.js)*/}
+            <GoogleAnalytics gaId="G-G4LJH7RLRJ" />
             <Head>
                 <title>EY Web & App Development</title>
                 <meta name="description"
@@ -58,10 +60,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                         "description": "EY Digital Innovations specializes in web design, app development, system architecture, product engineering, portraits, event and product photography, artificial intelligence, videography, and drone shots. Based in Rockland County, NY."
                     })}
                 </script>
-
-                {/*Google tag (gtag.js)*/}
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-G4LJH7RLRJ"></script>
-                <GoogleAnalytics gaId="G-G4LJH7RLRJ" />
             </Head>
             <Component {...pageProps} />
         </>
