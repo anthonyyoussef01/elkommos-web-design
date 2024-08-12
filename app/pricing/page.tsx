@@ -50,7 +50,7 @@ const tiers: PricingTier[] = [
         name: 'Starter Package',
         id: '0',
         href: '/subscribe',
-        price: {'1': '$999 - 4,999', '2': '$45 - 89', '3': '$459 - 899'},
+        price: {'1': '$999 - 4,999', '2': '$45 - 145', '3': '$459 - 1459'},
         discountPrice: {'1': '', '2': '', '3': ''},
         description: `Perfect for small websites (up to 5 pages`,
         features: [
@@ -70,7 +70,7 @@ const tiers: PricingTier[] = [
         name: 'Business Package',
         id: '1',
         href: '/subscribe',
-        price: {'1': '$4,999+', '2': '$99 - 179', '3': '$999 - 1,799'},
+        price: {'1': '$4,999+', '2': '$189 - 519', '3': '$1,899 - 5,199'},
         discountPrice: {'1': '', '2': '', '3': ''},
         description: `Ideal for bigger websites and e-commerce.`,
         features: [
@@ -92,7 +92,7 @@ const tiers: PricingTier[] = [
         name: 'Custom Package',
         id: '2',
         href: '/contact-us',
-        price: {'1': '$39k+', '2': '$499+', '3': '4,999+'},
+        price: {'1': '$39k+', '2': '$849+', '3': '8,499+'},
         discountPrice: {'1': '', '2': '', '3': ''},
         description: `For fully custom websites or applications coded from scratch using your preferred stack.`,
         features: [
