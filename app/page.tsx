@@ -9,6 +9,7 @@ import {Services} from "@/app/(home)/components/services";
 import Footer from "@/app/(home)/components/footer";
 import {Icon} from "lucide-react";
 import MyDropdown from "@/components/my-dropdown";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -17,6 +18,22 @@ export default function Home() {
             name="keywords"
             content="Elkommos Youssef Website and Application Development, web design, app development, system architecture, product engineering, portraits, event photography, product photography, artificial intelligence, videography, drone shots, Rockland, New York, New City, Hudson Valley, nj, new jersey"
         />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:title" content="EY Web & App Development"/>
+        <meta property="og:description"
+              content="EY Web & App Development specializes in web design, app development, system architecture, product engineering, portraits, event and product photography, artificial intelligence (AI), videography, and drone shots. Based in Rockland County, NY."/>
+        <meta property="og:url" content="https://elkommos.com"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="/logo.png"/>
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="EY Digital Innovations | Web & App Development"/>
+        <meta name="twitter:description"
+              content="EY Web & App Development specializes in web design, app development, system architecture, product engineering, portraits, event and product photography, artificial intelligence (AI), videography, and drone shots. Based in Rockland County, NY."/>
+        <meta name="twitter:image" content="/logo.png"/>
+
         <MyDropdown/>
 
         <HeroParallax products={products}/>

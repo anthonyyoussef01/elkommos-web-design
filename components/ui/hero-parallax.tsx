@@ -418,11 +418,11 @@ export const Header = () => {
                 </svg>
             </BlurIn>
             <BlurIn
-                word="The EY"
+                word="EY Web &"
                 className="text-2xl md:text-7xl font-bold dark:text-white"
             />
             <BlurIn
-                word="development studio"
+                word="App Development"
                 className="text-2xl md:text-7xl font-bold dark:text-white"
             />
             <BlurIn
