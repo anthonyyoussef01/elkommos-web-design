@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     description: "EY Web & App Development uses cutting-edge technologies like React, Next.js, Angular, Spring, Nest.js, Express, Passport, HTML5, CSS3, Tailwind CSS, Bootstrap, Sass, Microsoft SQL Server, MySQL, SQLite, Amazon AWS, PostgreSQL, Firebase, MongoDB, Redis, Dart, Flutter, Android, Jest, Testing Library, Vercel, Docker, Git, Jira, GitHub, GitLab, Visual Studio Code, Android Studio, IntelliJ IDEA, WebStorm, Vim, SonarQube, Figma, and many more to deliver high-quality, innovative results to meet your business needs.",
     openGraph: {
         title: "EY Web & App Development | EY Digital Solutions",
+        siteName: "EY Web & App Development | EY Digital Innovations",
         description: "EY Web & App Development: web design, app development, system architecture, AI, photography, videography, and drone shots. Rockland County, NY.",
         url: "https://elkommos.com",
         type: "website",
@@ -23,7 +24,15 @@ export const metadata: Metadata = {
                 width: 3456,
                 height: 1728,
                 alt: "EY Digital Solutions",
+                secureUrl: "https://elkommos.com/banner.png",
             },
+            {
+                url: "https://elkommos.com/logo.png",
+                width: 512,
+                height: 512,
+                alt: "EY Digital Innovations",
+                secureUrl: "https://elkommos.com/logo.png",
+            }
         ],
     },
 };
