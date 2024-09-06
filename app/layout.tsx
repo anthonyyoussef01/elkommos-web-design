@@ -26,13 +26,13 @@ export const metadata: Metadata = {
                 alt: "EY Digital Solutions",
                 secureUrl: "https://elkommos.com/banner.png",
             },
-            {
-                url: "https://elkommos.com/logo.png",
-                width: 512,
-                height: 512,
-                alt: "EY Digital Innovations",
-                secureUrl: "https://elkommos.com/logo.png",
-            }
+            // {
+            //     url: "https://elkommos.com/logo.png",
+            //     width: 512,
+            //     height: 512,
+            //     alt: "EY Digital Innovations",
+            //     secureUrl: "https://elkommos.com/logo.png",
+            // }
         ],
     },
 };

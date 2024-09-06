@@ -48,61 +48,67 @@ const products = [
     title: "The Key of Life Scouting Group",
     link: "https://TheKeyOfLifeScoutingGroup.com",
     thumbnail:
-        "/tkol.png",
+        "/tkol.webp",
   },
   {
     title: "Personal Portfolio",
     link: "https://elkommos.me",
     thumbnail:
-        "/anthony_portfolio.png",
+        "/anthony_portfolio.webp",
   },
   {
     title: "Resume Site",
     link: "https://lily-resume.vercel.app",
     thumbnail:
-        "/lily_resume.png",
+        "/lily_resume.webp",
   },
   {
     title: "Esos",
     link: "https://esoscopts.com",
     thumbnail:
-        "/esos.png",
+        "/esos.webp",
   },
   {
     title: "Mahzuzah",
     link: "https://mahzuzah.com",
     thumbnail:
-        "/mahzuzah.png",
+        "/mahzuzah.webp",
   },
   {
     title: "Stony Point Pancake Factory",
     link: "https://stonypointpancakefactory.com",
     thumbnail:
-        "/pancake_factory.png",
+        "/pancake_factory.webp",
   },
   {
     title: "KingFut",
     link: "https://kingfut.com/author/anthonyyoussef01",
     thumbnail:
-        "/kingfut.png",
+        "/kingfut.webp",
   },
 
   {
     title: "SMSANJ Church",
     link: "https://smsanj.org",
     thumbnail:
-        "/smsanj.png",
+        "/smsanj.webp",
   },
   {
     title: "VMSP Church",
     link: "https://vmspchurch.org",
     thumbnail:
-        "/vmsp.png",
+        "/vmsp.webp",
+  },
+  {
+    title: "Perspective Engineering & Consulting",
+    link: "https://pec-mep.com",
+    thumbnail:
+        "/pec-mep.webp",
   },
   {
     title: "Anthony Portfolio",
-    link: "https://elkommos.me",
+    link: "https://anthony.elkommos.com",
     thumbnail:
-        "/anthony_light_portfolio.png",
+        "/anthony_light_portfolio.webp",
   },
 ];

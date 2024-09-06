@@ -34,7 +34,7 @@ const MyDropdown = () => {
             </a>
             <TriggerWrapper>
                 <Trigger>What we do</Trigger>
-                <Trigger>Technologies</Trigger>
+                <Trigger>Technologies & Projects</Trigger>
                 <Trigger>Services & Information</Trigger>
             </TriggerWrapper>
             <Tabs>
