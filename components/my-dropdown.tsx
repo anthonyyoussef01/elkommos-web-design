@@ -1,6 +1,5 @@
 'use client'
 
-import Image from "next/image";
 import {Dropdown, Tab, Tabs, Trigger, TriggerWrapper} from "@/components/ui/dropdown-bar";
 import {Offerings} from "@/app/(home)/components/offerings";
 import {Technologies} from "@/app/(home)/components/technologies";
@@ -14,7 +13,6 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
 
 const MyDropdown = () => {
     const { setTheme } = useTheme();
@@ -24,7 +22,7 @@ const MyDropdown = () => {
             <a href="/">
                 <div className="relative">
                     <button
-                        className="mt-0.5 relative h-[1.1rem] w-[1.1rem] transform hover:-translate-y-1 transition duration-400 border-0 focus:outline-none"
+                        className="relative h-[1.1rem] w-[1.1rem] transform hover:translate-y-[-0.25rem] transition-transform duration-300 border-0 focus:outline-none align-middle"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 48 48"
                              className="absolute w-full h-full">
@@ -54,7 +52,7 @@ const MyDropdown = () => {
                 <DropdownMenuTrigger asChild>
                     <div className="relative">
                         <button
-                            className="mt-0.5 relative h-[1.1rem] w-[1.1rem] transform hover:-translate-y-1 transition duration-400 border-0 focus:outline-none"
+                            className="relative h-[1.1rem] w-[1.1rem] transform hover:translate-y-[-0.25rem] transition-transform duration-300 border-0 focus:outline-none align-middle"
                         >
                             <SunIcon
                                 className="absolute w-full h-full rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
