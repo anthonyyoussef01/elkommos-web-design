@@ -63,16 +63,16 @@ const products = [
         "/lily_resume.webp",
   },
   {
-    title: "Esos",
-    link: "https://esoscopts.com",
+    title: "Qamous",
+    link: "https://qamous.org",
     thumbnail:
-        "/esos.webp",
+        "/qamous.webp",
   },
   {
-    title: "Mahzuzah",
-    link: "https://mahzuzah.com",
+    title: "Imperial Edge",
+    link: "https://imperial-edge.com",
     thumbnail:
-        "/mahzuzah.webp",
+        "/imperial-edge.webp",
   },
   {
     title: "Stony Point Pancake Factory",
