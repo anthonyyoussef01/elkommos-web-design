@@ -88,7 +88,11 @@ export default function Footer() {
                             lg:mb-1.5 lg:tracking-wide
                          "
             >
-                Designed and developed by Anthony Elkommos Youssef. All rights reserved.
+                Designed and developed by{" "}
+                <Link href={"https://anthony.elkommos.com"} className={"font-bold"}>
+                    Anthony Elkommos Youssef
+                </Link>
+                . All rights reserved.
             </p>
         </section>
     );
