@@ -52,7 +52,7 @@ const products = [
   },
   {
     title: "Personal Portfolio",
-    link: "https://elkommos.me",
+    link: "https://anthony.elkommos.com",
     thumbnail:
         "/anthony_portfolio.webp",
   },
